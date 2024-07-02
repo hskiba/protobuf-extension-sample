@@ -1,0 +1,15 @@
+syntax = "proto3";
+package protobuf_extension_sample.my_sample_package.v1;
+
+import "protobuf_extension_sample/my_types_package/v1/datatype.proto";
+
+message Sample {
+  bool bool = 1 [(protobuf_extension_sample.my_types_package.v1.my_data_type) = DATA_TYPE_BOOL];
+  double num = 2 [(protobuf_extension_sample.my_types_package.v1.my_data_type) = DATA_TYPE_NUM];
+  int64 date = 3 [(protobuf_extension_sample.my_types_package.v1.my_data_type) = DATA_TYPE_DATE];
+  int64 datetime = 4 [(protobuf_extension_sample.my_types_package.v1.my_data_type) = DATA_TYPE_DATETIME];
+  int64 int = 5 [(protobuf_extension_sample.my_types_package.v1.my_data_type) = DATA_TYPE_INT];
+  repeated double array = 6 [(protobuf_extension_sample.my_types_package.v1.my_data_type) = DATA_TYPE_ARRAY];
+  string char = 7 [(protobuf_extension_sample.my_types_package.v1.my_data_type) = DATA_TYPE_CHAR];
+  int32 unsupported = 8;
+}
